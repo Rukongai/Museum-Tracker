@@ -1,7 +1,11 @@
+import { inject } from '@vercel/analytics';
 import './style.css';
 import './icon-browser.css';
 import { siteHeader, initNavigation, applyTheme } from './shell.js';
 import { PREFERENCES_KEY, readPreferences } from './preferences.js';
+
+// Initialize Vercel Web Analytics
+inject();
 
 const $ = id => document.getElementById(id);
 let data = [];

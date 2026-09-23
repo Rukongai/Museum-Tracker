@@ -1,8 +1,12 @@
+import { inject } from '@vercel/analytics';
 import catalog from '../data/catalog.json';
 import { SEASON_FILTERS, WEATHER_FILTERS, WINGS, SIZES, RARITIES, STORAGE_KEY, emptyFilters, weatherTags, locationTags, matches, stats, validateBackup } from './model.js';
 import './style.css';
 import { siteHeader, initNavigation, applyTheme } from './shell.js';
 import { PREFERENCES_KEY, setKey, readPreferences, isSetCollapsed } from './preferences.js';
+
+// Initialize Vercel Web Analytics
+inject();
 
 const items = catalog.items;
 const filters = emptyFilters();
