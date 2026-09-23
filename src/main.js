@@ -1,4 +1,5 @@
 import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import catalog from '../data/catalog.json';
 import { SEASON_FILTERS, WEATHER_FILTERS, WINGS, SIZES, RARITIES, STORAGE_KEY, emptyFilters, weatherTags, locationTags, matches, stats, validateBackup } from './model.js';
 import './style.css';
@@ -7,6 +8,9 @@ import { PREFERENCES_KEY, setKey, readPreferences, isSetCollapsed } from './pref
 
 // Initialize Vercel Web Analytics
 inject();
+
+// Initialize Vercel Speed Insights
+injectSpeedInsights();
 
 const items = catalog.items;
 const filters = emptyFilters();
